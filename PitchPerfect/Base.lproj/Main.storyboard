@@ -198,9 +198,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ry-QT-E4w">
-                                <rect key="frame" x="136" y="284" width="49" height="30"/>
+                                <rect key="frame" x="138" y="284" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit"/>
+                                <state key="normal" title="Create"/>
                                 <connections>
                                     <action selector="saveSoundTrackInformation:" destination="k1W-UD-y0d" eventType="touchUpInside" id="H6T-Mb-gjd"/>
                                 </connections>
@@ -243,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2AM-Ra-Lnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2398" y="-640"/>
+            <point key="canvasLocation" x="2683" y="-614"/>
         </scene>
         <!--Play Sounds View Controller-->
         <scene sceneID="9MU-Ri-lXC">
@@ -349,11 +349,12 @@
                         <outlet property="snailButton" destination="Ns1-xc-JJ2" id="yp8-2d-Lmh"/>
                         <outlet property="stopButton" destination="bCx-oU-hEb" id="uWS-qj-xg8"/>
                         <outlet property="vaderButton" destination="tZG-rg-xAc" id="nJU-70-gs4"/>
+                        <segue destination="k1W-UD-y0d" kind="show" identifier="saveAudioToBeSoundTrack" id="nDA-l4-C9p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDp-2o-NIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2919" y="112"/>
+            <point key="canvasLocation" x="3193" y="112"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="XN6-h5-NXG">
@@ -542,7 +543,7 @@
                                 <rect key="frame" x="48" y="173" width="224" height="42"/>
                                 <color key="backgroundColor" red="0.93037670850753784" green="0.9814416766166687" blue="0.94628423452377319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="rfw-fV-Ic7"/>
+                                    <constraint firstAttribute="height" constant="42" id="nh1-tg-M9U"/>
                                 </constraints>
                                 <state key="normal" title="Record your new amazing sound"/>
                                 <connections>
@@ -558,7 +559,7 @@
                                 <size key="shadowOffset" width="2" height="-1"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nC-EO-a7u">
-                                <rect key="frame" x="48" y="321" width="224" height="42"/>
+                                <rect key="frame" x="48" y="263" width="224" height="42"/>
                                 <color key="backgroundColor" red="0.93037670850753784" green="0.9814416766166687" blue="0.94628423452377319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Manage your recorded sound"/>
                                 <connections>
@@ -566,11 +567,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux6-T6-Idf">
-                                <rect key="frame" x="48" y="247" width="224" height="42"/>
+                                <rect key="frame" x="48" y="350" width="224" height="42"/>
                                 <color key="backgroundColor" red="0.93037670850753784" green="0.9814416766166687" blue="0.94628423452377319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="CDY-Au-Im0"/>
-                                </constraints>
                                 <state key="normal" title="Text to Speech Tool"/>
                                 <connections>
                                     <segue destination="TMW-6n-kGH" kind="show" id="iZ5-El-wPa"/>
@@ -579,17 +577,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.94742459058761597" green="0.92520183324813843" blue="0.79898834228515625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GzF-GX-q5y" firstAttribute="top" secondItem="baF-Wf-ohY" secondAttribute="bottom" constant="61" id="B77-tt-wJG"/>
-                            <constraint firstItem="baF-Wf-ohY" firstAttribute="leading" secondItem="Odp-n1-edH" secondAttribute="leadingMargin" constant="93" id="FGB-vr-Tqc"/>
-                            <constraint firstItem="Ux6-T6-Idf" firstAttribute="leading" secondItem="8nC-EO-a7u" secondAttribute="leading" id="FaC-Eg-3Ax"/>
-                            <constraint firstItem="baF-Wf-ohY" firstAttribute="top" secondItem="07O-w9-05U" secondAttribute="bottom" constant="26" id="Go4-E3-7mt"/>
-                            <constraint firstItem="8nC-EO-a7u" firstAttribute="top" secondItem="Ux6-T6-Idf" secondAttribute="bottom" constant="32" id="GrT-3t-TxB"/>
-                            <constraint firstItem="Ux6-T6-Idf" firstAttribute="top" secondItem="GzF-GX-q5y" secondAttribute="bottom" constant="32" id="IDx-XH-hL5"/>
-                            <constraint firstItem="GzF-GX-q5y" firstAttribute="trailing" secondItem="Ux6-T6-Idf" secondAttribute="trailing" id="Nxf-jW-NpZ"/>
-                            <constraint firstItem="GzF-GX-q5y" firstAttribute="centerX" secondItem="Odp-n1-edH" secondAttribute="centerX" id="Xq1-Hh-LCF"/>
-                            <constraint firstItem="3Dd-bC-cbF" firstAttribute="top" secondItem="8nC-EO-a7u" secondAttribute="bottom" constant="205" id="YLc-MT-SFc"/>
-                            <constraint firstItem="GzF-GX-q5y" firstAttribute="leading" secondItem="Ux6-T6-Idf" secondAttribute="leading" id="jrn-nj-Xfn"/>
-                            <constraint firstItem="Ux6-T6-Idf" firstAttribute="trailing" secondItem="8nC-EO-a7u" secondAttribute="trailing" id="urO-QW-hWn"/>
+                            <constraint firstItem="baF-Wf-ohY" firstAttribute="top" secondItem="07O-w9-05U" secondAttribute="bottom" constant="26" id="Bmt-bp-FXO"/>
+                            <constraint firstItem="Ux6-T6-Idf" firstAttribute="top" secondItem="8nC-EO-a7u" secondAttribute="bottom" constant="45" id="Dgw-8c-d4z"/>
+                            <constraint firstItem="GzF-GX-q5y" firstAttribute="centerX" secondItem="Odp-n1-edH" secondAttribute="centerX" id="Hw8-iH-5ZX"/>
+                            <constraint firstItem="8nC-EO-a7u" firstAttribute="centerY" secondItem="Odp-n1-edH" secondAttribute="centerY" id="L4C-v8-JKt"/>
+                            <constraint firstItem="8nC-EO-a7u" firstAttribute="top" secondItem="GzF-GX-q5y" secondAttribute="bottom" constant="48" id="QPB-ui-1Op"/>
+                            <constraint firstItem="8nC-EO-a7u" firstAttribute="trailing" secondItem="Ux6-T6-Idf" secondAttribute="trailing" id="RCv-dH-YP5"/>
+                            <constraint firstItem="3Dd-bC-cbF" firstAttribute="top" secondItem="Ux6-T6-Idf" secondAttribute="bottom" constant="176" id="UOP-Jk-pQ7"/>
+                            <constraint firstItem="GzF-GX-q5y" firstAttribute="trailing" secondItem="8nC-EO-a7u" secondAttribute="trailing" id="UcX-Eh-Kig"/>
+                            <constraint firstItem="baF-Wf-ohY" firstAttribute="leading" secondItem="Odp-n1-edH" secondAttribute="leadingMargin" constant="93" id="YOc-Sh-HIQ"/>
+                            <constraint firstItem="GzF-GX-q5y" firstAttribute="top" secondItem="baF-Wf-ohY" secondAttribute="bottom" constant="61" id="lhb-XB-dy7"/>
+                            <constraint firstItem="8nC-EO-a7u" firstAttribute="leading" secondItem="Ux6-T6-Idf" secondAttribute="leading" id="pAh-xo-DdT"/>
+                            <constraint firstItem="GzF-GX-q5y" firstAttribute="leading" secondItem="8nC-EO-a7u" secondAttribute="leading" id="sRK-rz-zRJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7h2-pZ-ga4"/>
@@ -727,4 +726,7 @@
         <image name="Slow" width="90" height="90"/>
         <image name="Stop" width="155" height="155"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nDA-l4-C9p"/>
+    </inferredMetricsTieBreakers>
 </document>
