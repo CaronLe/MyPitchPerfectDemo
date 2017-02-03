@@ -1,62 +1,55 @@
 //
-//  AddSoundTrackViewController.swift
+//  EditSoundTrackViewController.swift
 //  PitchPerfect
 //
-//  Created by Swift on 02/02/2017.
+//  Created by Swift on 03/02/2017.
 //  Copyright © 2017 Swift. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class AddSoundTrackViewController: UIViewController {
+class EditSoundTrackViewController: UIViewController, NSFetchedResultsControllerDelegate {
     // MARK: Properties
-    
+    var index: IndexPath?
     @IBOutlet weak var nameSoundTrack: UITextField!
     @IBOutlet weak var typeSoundTrack: UITextField!
     @IBOutlet weak var duration: UITextField!
-    
+    // Properties for fetching
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var fetchedResultsController = DataAcess.fetchData()
     
     // MARK: Actions
-    @IBAction func saveSoundTrackInformation(_ sender: UIButton)
+   
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Code for fetch configuration
+        let soundTrack = fetchedResultsController.object(at: index!) as! SoundTrack
+        nameSoundTrack.text = soundTrack.name
+        typeSoundTrack.text = soundTrack.type
+        duration.text = soundTrack.duration
+        
+    }
+    
+    
+    @IBAction func update(_ sender: UIButton)
     {
-        let entityDescription = NSEntityDescription.entity(forEntityName: "SoundTrack", in: context)
-        let soundTrack = SoundTrack(entity: entityDescription!, insertInto: context)
-       
+        let soundTrack = fetchedResultsController.object(at: index!) as! SoundTrack
         soundTrack.name = nameSoundTrack.text
         soundTrack.type = typeSoundTrack.text
         soundTrack.duration = duration.text
-        
-                do
-                {
-                    try context.save()
-                    print("saved successfully!")
-                    navigationController?.popViewController(animated: true)
-                }
-                catch let error as NSError {
-                    print("Could not save \(error)")
-                    
-                }
-                
-
+        DataAcess.saveContext()
+        navigationController?.popViewController(animated: true)
+       
     }
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.title = "Add SoundTrack's information"
-    }
+
     /*
     // MARK: - Navigation
 

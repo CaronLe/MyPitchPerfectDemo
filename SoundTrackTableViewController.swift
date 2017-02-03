@@ -17,7 +17,7 @@ class SoundTrackTableViewController: UITableViewController, NSFetchedResultsCont
 //    var duration = ["15s", "20s"]
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>!
+    var fetchedResultsController = DataAcess.fetchData()
 
     // MARK: Actions
     
@@ -62,25 +62,28 @@ class SoundTrackTableViewController: UITableViewController, NSFetchedResultsCont
 
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SoundTrack")
-        let fetchSort = NSSortDescriptor(key: "name", ascending: false)
-        fetchRequest.sortDescriptors = [fetchSort]
-        
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
-        
-        //3
-        do {
-            try fetchedResultsController.performFetch()
-            
-        } catch let error as NSError {
-            print("Unable to perform fetch: \(error.localizedDescription)")
-        }
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "SoundTrack")
+//        let fetchSort = NSSortDescriptor(key: "name", ascending: false)
+//        fetchRequest.sortDescriptors = [fetchSort]
+//        
+//        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+//        fetchedResultsController.delegate = self
+//        
+//        //3
+//        do {
+//            try fetchedResultsController.performFetch()
+//            
+//        } catch let error as NSError {
+//            print("Unable to perform fetch: \(error.localizedDescription)")
+//        }
 
     }
 
@@ -163,19 +166,15 @@ class SoundTrackTableViewController: UITableViewController, NSFetchedResultsCont
         if editingStyle == .delete {
             let soundTrack = fetchedResultsController.object(at: indexPath) as! SoundTrack
             context.delete(soundTrack)
-            do
-            {
-                try context.save()
-            } catch let error as NSError{
-                print("Error saving context after delete: \(error.localizedDescription)")
-            }
+            DataAcess.saveContext()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        performSegue(withIdentifier: "editSoundTrack", sender: indexPath)
+        
     }
 
     /*
@@ -193,14 +192,20 @@ class SoundTrackTableViewController: UITableViewController, NSFetchedResultsCont
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "editSoundTrack"
+        {
+            let editSoundTrackViewController = segue.destination as! EditSoundTrackViewController
+            let indexNeededToUpdate = sender as! IndexPath
+            editSoundTrackViewController.index = indexNeededToUpdate
+        }
+        
     }
-    */
+   
 
 }
