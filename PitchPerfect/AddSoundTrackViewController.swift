@@ -17,6 +17,7 @@ class AddSoundTrackViewController: UIViewController {
     @IBOutlet weak var duration: UITextField!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var recordedSoundTrack: RecordedSoundTrack?
     
     // MARK: Actions
     @IBAction func saveSoundTrackInformation(_ sender: UIButton)
@@ -24,8 +25,8 @@ class AddSoundTrackViewController: UIViewController {
         let entityDescription = NSEntityDescription.entity(forEntityName: "SoundTrack", in: context)
         let soundTrack = SoundTrack(entity: entityDescription!, insertInto: context)
        
-        soundTrack.name = nameSoundTrack.text
-        soundTrack.type = typeSoundTrack.text
+        soundTrack.name = nameSoundTrack!.text
+        soundTrack.type = typeSoundTrack!.text
         soundTrack.duration = duration.text
         
                 do
@@ -44,6 +45,8 @@ class AddSoundTrackViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        typeSoundTrack.text = recordedSoundTrack?.type
+        duration.text = recordedSoundTrack?.duration
         
 
     }

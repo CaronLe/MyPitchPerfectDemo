@@ -17,6 +17,7 @@
 		4300DC3C1E35A58800B34E36 /* PitchPerfectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4300DC3B1E35A58800B34E36 /* PitchPerfectUITests.swift */; };
 		431A510B1E443FAB005423D8 /* EditSoundTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A510A1E443FAB005423D8 /* EditSoundTrackViewController.swift */; };
 		431A510D1E4476DF005423D8 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A510C1E4476DF005423D8 /* DataAccess.swift */; };
+		431A510F1E448E19005423D8 /* RecordedSoundTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A510E1E448E19005423D8 /* RecordedSoundTrack.swift */; };
 		4342B9691E3731BC0034D2F7 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4342B9681E3731BC0034D2F7 /* PlaySoundsViewController.swift */; };
 		4373F0EC1E42B23B008B5A38 /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373F0EB1E42B23B008B5A38 /* TextInputViewController.swift */; };
 		4373F0F51E42D3EA008B5A38 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373F0F41E42D3EA008B5A38 /* LoginViewController.swift */; };
@@ -60,6 +61,7 @@
 		4300DC3D1E35A58800B34E36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		431A510A1E443FAB005423D8 /* EditSoundTrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSoundTrackViewController.swift; sourceTree = "<group>"; };
 		431A510C1E4476DF005423D8 /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
+		431A510E1E448E19005423D8 /* RecordedSoundTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedSoundTrack.swift; sourceTree = "<group>"; };
 		4342B9681E3731BC0034D2F7 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 		4373F0EB1E42B23B008B5A38 /* TextInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputViewController.swift; sourceTree = "<group>"; };
 		4373F0F41E42D3EA008B5A38 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				4373F1041E42E787008B5A38 /* AddSoundTrackViewController.swift */,
+				431A510E1E448E19005423D8 /* RecordedSoundTrack.swift */,
 				4373F1021E42E48A008B5A38 /* SoundTrackTableViewController.swift */,
 				4373F0FA1E42E0EA008B5A38 /* SoundTrackTableViewCell.swift */,
 				431A510A1E443FAB005423D8 /* EditSoundTrackViewController.swift */,
@@ -333,6 +336,7 @@
 				4373F0FB1E42E0EA008B5A38 /* SoundTrackTableViewCell.swift in Sources */,
 				4300DC1B1E35A58800B34E36 /* RecordSoundsViewController.swift in Sources */,
 				431A510B1E443FAB005423D8 /* EditSoundTrackViewController.swift in Sources */,
+				431A510F1E448E19005423D8 /* RecordedSoundTrack.swift in Sources */,
 				43B2B8541E38611000829DD8 /* playsoundsviewcontroller-audio.swift in Sources */,
 				4373F1031E42E48A008B5A38 /* SoundTrackTableViewController.swift in Sources */,
 				4300DC211E35A58800B34E36 /* PitchPerfect.xcdatamodeld in Sources */,
