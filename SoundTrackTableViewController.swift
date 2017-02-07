@@ -21,46 +21,6 @@ class SoundTrackTableViewController: UITableViewController, NSFetchedResultsCont
 
     // MARK: Actions
     
-    @IBAction func addSoundTrack(_ sender: UIBarButtonItem)
-    {
-        performSegue(withIdentifier: "addSoundTrack", sender: nil)
-//        // create alertcontroller
-//        let alert = UIAlertController(title: "Add Movie", message: nil, preferredStyle: .alert)
-//        
-//        // add textfield to alert
-//        alert.addTextField { (movieName) -> Void in
-//            movieName.placeholder = "Enter Movie Name"
-//        }
-//        
-//        // the add action for the textfield
-//        let addAction = UIAlertAction(title: "Add", style: .default) { _ in
-//            // TODO: Implement
-//            // 1
-//            let entity = NSEntityDescription.entity(forEntityName: "SoundTrack", in: self.context)
-//            // 2
-//            let soundTrack = SoundTrack(entity:entity!, insertInto: self.context)
-//            // 3
-//            let textField = alert.textFields?.first
-//            soundTrack.name = textField?.text
-//            // 4
-//            do {
-//                try self.context.save()
-//            } catch let error as NSError {
-//                print("Error saving movie \(error.localizedDescription)")
-//            }
-//        }
-//        
-//        // the cancel action for the textfield
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//        
-//        // add the actions to the alert
-//        alert.addAction(cancelAction)
-//        alert.addAction(addAction)
-//        
-//        // present the alert
-//        self.present(alert, animated: true, completion: nil)
-
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()

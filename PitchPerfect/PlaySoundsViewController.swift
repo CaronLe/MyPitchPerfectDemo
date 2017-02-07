@@ -24,7 +24,10 @@ class PlaySoundsViewController: UIViewController {
     var audioEngine: AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer: Timer!
+ 
     let recordedSoundTrack = RecordedSoundTrack()
+    // Properties of recorded sound track that will be sent to create new SoundTrack with information View
+    var type: String!
     
     enum ButtonType: Int
     {
@@ -39,16 +42,28 @@ class PlaySoundsViewController: UIViewController {
         {
         case .slow:
             playSound(rate:  0.5)
+            type = "Slow"
+            
         case .fast:
             playSound(rate: 1.5)
+            type = "Fast"
+           
         case .chipmunk:
             playSound(pitch: 1000)
+            type = "Chipmunk"
+            
         case .vader:
             playSound(pitch: -1000)
+            type = "Vader"
+            
         case .echo:
             playSound(echo: true)
+            type = "Echo"
+            
         case .reverb:
             playSound(reverb: true)
+            type = "Reverb"
+            
         }
         configureUI(.playing)
        
@@ -57,8 +72,11 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
         print("Stop Audio Button Pressed")
         stopAudio()
-        recordedSoundTrack.duration = "15s"
-        recordedSoundTrack.type = "Slow"
+        
+        recordedSoundTrack.type = type
+        // Duration:
+        let player = try! AVAudioPlayer(contentsOf: recordedAudioURL)
+        recordedSoundTrack.duration = stringFromTimeInterval(interval: player.duration)
         
         performSegue(withIdentifier: "saveAudioToBeSoundTrack", sender: recordedSoundTrack)
     }
