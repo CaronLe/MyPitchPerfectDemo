@@ -19,12 +19,17 @@
 		431A510D1E4476DF005423D8 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A510C1E4476DF005423D8 /* DataAccess.swift */; };
 		431A510F1E448E19005423D8 /* RecordedSoundTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431A510E1E448E19005423D8 /* RecordedSoundTrack.swift */; };
 		4342B9691E3731BC0034D2F7 /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4342B9681E3731BC0034D2F7 /* PlaySoundsViewController.swift */; };
+		435ABD1C1E4B0AA3009E1EE6 /* onlineSoundTrackJsonFile.json in Resources */ = {isa = PBXBuildFile; fileRef = 435ABD1B1E4B0AA3009E1EE6 /* onlineSoundTrackJsonFile.json */; };
 		4373F0EC1E42B23B008B5A38 /* TextInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373F0EB1E42B23B008B5A38 /* TextInputViewController.swift */; };
 		4373F0F51E42D3EA008B5A38 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373F0F41E42D3EA008B5A38 /* LoginViewController.swift */; };
 		4373F0FB1E42E0EA008B5A38 /* SoundTrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373F0FA1E42E0EA008B5A38 /* SoundTrackTableViewCell.swift */; };
 		4373F1031E42E48A008B5A38 /* SoundTrackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373F1021E42E48A008B5A38 /* SoundTrackTableViewController.swift */; };
 		4373F1051E42E787008B5A38 /* AddSoundTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4373F1041E42E787008B5A38 /* AddSoundTrackViewController.swift */; };
+		4374A6B31E4AE75500262359 /* OnlineSoundTrackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4374A6B21E4AE75500262359 /* OnlineSoundTrackTableViewController.swift */; };
+		4374A6B51E4AEB6900262359 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4374A6B41E4AEB6900262359 /* Podfile */; };
+		439164C71E4981230070C4F7 /* MP3Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439164C61E4981230070C4F7 /* MP3Player.swift */; };
 		43B2B8541E38611000829DD8 /* playsoundsviewcontroller-audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2B8531E38611000829DD8 /* playsoundsviewcontroller-audio.swift */; };
+		64E656B514AD39B815274F63 /* Pods_PitchPerfect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BADD2B279BBB596950BEB1C7 /* Pods_PitchPerfect.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,12 +68,19 @@
 		431A510C1E4476DF005423D8 /* DataAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
 		431A510E1E448E19005423D8 /* RecordedSoundTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedSoundTrack.swift; sourceTree = "<group>"; };
 		4342B9681E3731BC0034D2F7 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		435ABD1B1E4B0AA3009E1EE6 /* onlineSoundTrackJsonFile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = onlineSoundTrackJsonFile.json; sourceTree = "<group>"; };
 		4373F0EB1E42B23B008B5A38 /* TextInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputViewController.swift; sourceTree = "<group>"; };
 		4373F0F41E42D3EA008B5A38 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4373F0FA1E42E0EA008B5A38 /* SoundTrackTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundTrackTableViewCell.swift; path = ../SoundTrackTableViewCell.swift; sourceTree = "<group>"; };
 		4373F1021E42E48A008B5A38 /* SoundTrackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SoundTrackTableViewController.swift; path = ../SoundTrackTableViewController.swift; sourceTree = "<group>"; };
 		4373F1041E42E787008B5A38 /* AddSoundTrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSoundTrackViewController.swift; sourceTree = "<group>"; };
+		4374A6B21E4AE75500262359 /* OnlineSoundTrackTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineSoundTrackTableViewController.swift; sourceTree = "<group>"; };
+		4374A6B41E4AEB6900262359 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		439164C61E4981230070C4F7 /* MP3Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MP3Player.swift; sourceTree = "<group>"; };
 		43B2B8531E38611000829DD8 /* playsoundsviewcontroller-audio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "playsoundsviewcontroller-audio.swift"; sourceTree = "<group>"; };
+		ABE439632B73E4D411114E31 /* Pods-PitchPerfect.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PitchPerfect.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PitchPerfect/Pods-PitchPerfect.debug.xcconfig"; sourceTree = "<group>"; };
+		BADD2B279BBB596950BEB1C7 /* Pods_PitchPerfect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PitchPerfect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DFE3CDEB950F39790C4C7A15 /* Pods-PitchPerfect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PitchPerfect.release.xcconfig"; path = "Pods/Target Support Files/Pods-PitchPerfect/Pods-PitchPerfect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64E656B514AD39B815274F63 /* Pods_PitchPerfect.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +117,7 @@
 				4300DC3A1E35A58800B34E36 /* PitchPerfectUITests */,
 				4300DC161E35A58800B34E36 /* Products */,
 				4373F0ED1E42C527008B5A38 /* Frameworks */,
+				7B854E9C3199055A85B6FCB4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +138,7 @@
 				4373F0FF1E42E194008B5A38 /* PitchRecordAndPlay */,
 				4373F0FE1E42E175008B5A38 /* TextToSpeechTool */,
 				4373F0FC1E42E0F5008B5A38 /* SoundTrackManagement */,
+				4374A6B11E4AE72000262359 /* Online SoundTrack */,
 				4373F0FD1E42E118008B5A38 /* SupportingFile */,
 			);
 			path = PitchPerfect;
@@ -150,6 +165,7 @@
 		4373F0ED1E42C527008B5A38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BADD2B279BBB596950BEB1C7 /* Pods_PitchPerfect.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,8 +173,9 @@
 		4373F0FC1E42E0F5008B5A38 /* SoundTrackManagement */ = {
 			isa = PBXGroup;
 			children = (
-				4373F1041E42E787008B5A38 /* AddSoundTrackViewController.swift */,
 				431A510E1E448E19005423D8 /* RecordedSoundTrack.swift */,
+				439164C61E4981230070C4F7 /* MP3Player.swift */,
+				4373F1041E42E787008B5A38 /* AddSoundTrackViewController.swift */,
 				4373F1021E42E48A008B5A38 /* SoundTrackTableViewController.swift */,
 				4373F0FA1E42E0EA008B5A38 /* SoundTrackTableViewCell.swift */,
 				431A510A1E443FAB005423D8 /* EditSoundTrackViewController.swift */,
@@ -171,6 +188,8 @@
 			children = (
 				4300DC181E35A58800B34E36 /* AppDelegate.swift */,
 				431A510C1E4476DF005423D8 /* DataAccess.swift */,
+				435ABD1B1E4B0AA3009E1EE6 /* onlineSoundTrackJsonFile.json */,
+				4374A6B41E4AEB6900262359 /* Podfile */,
 				4300DC271E35A58800B34E36 /* Info.plist */,
 				4300DC221E35A58800B34E36 /* Assets.xcassets */,
 				4300DC1F1E35A58800B34E36 /* PitchPerfect.xcdatamodeld */,
@@ -198,6 +217,23 @@
 			name = PitchRecordAndPlay;
 			sourceTree = "<group>";
 		};
+		4374A6B11E4AE72000262359 /* Online SoundTrack */ = {
+			isa = PBXGroup;
+			children = (
+				4374A6B21E4AE75500262359 /* OnlineSoundTrackTableViewController.swift */,
+			);
+			name = "Online SoundTrack";
+			sourceTree = "<group>";
+		};
+		7B854E9C3199055A85B6FCB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABE439632B73E4D411114E31 /* Pods-PitchPerfect.debug.xcconfig */,
+				DFE3CDEB950F39790C4C7A15 /* Pods-PitchPerfect.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,9 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4300DC401E35A58800B34E36 /* Build configuration list for PBXNativeTarget "PitchPerfect" */;
 			buildPhases = (
+				AE414C0E46794A6BFFC3D62C /* [CP] Check Pods Manifest.lock */,
 				4300DC111E35A58700B34E36 /* Sources */,
 				4300DC121E35A58700B34E36 /* Frameworks */,
 				4300DC131E35A58700B34E36 /* Resources */,
+				7C1272F82D1C13D944ECD296 /* [CP] Embed Pods Frameworks */,
+				DDFDE2830B2ACE9EB83B4999 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,7 +346,9 @@
 			files = (
 				4300DC261E35A58800B34E36 /* LaunchScreen.storyboard in Resources */,
 				4300DC231E35A58800B34E36 /* Assets.xcassets in Resources */,
+				4374A6B51E4AEB6900262359 /* Podfile in Resources */,
 				4300DC1E1E35A58800B34E36 /* Main.storyboard in Resources */,
+				435ABD1C1E4B0AA3009E1EE6 /* onlineSoundTrackJsonFile.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +368,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7C1272F82D1C13D944ECD296 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PitchPerfect/Pods-PitchPerfect-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE414C0E46794A6BFFC3D62C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DDFDE2830B2ACE9EB83B4999 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PitchPerfect/Pods-PitchPerfect-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4300DC111E35A58700B34E36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -339,6 +428,8 @@
 				431A510F1E448E19005423D8 /* RecordedSoundTrack.swift in Sources */,
 				43B2B8541E38611000829DD8 /* playsoundsviewcontroller-audio.swift in Sources */,
 				4373F1031E42E48A008B5A38 /* SoundTrackTableViewController.swift in Sources */,
+				439164C71E4981230070C4F7 /* MP3Player.swift in Sources */,
+				4374A6B31E4AE75500262359 /* OnlineSoundTrackTableViewController.swift in Sources */,
 				4300DC211E35A58800B34E36 /* PitchPerfect.xcdatamodeld in Sources */,
 				431A510D1E4476DF005423D8 /* DataAccess.swift in Sources */,
 				4342B9691E3731BC0034D2F7 /* PlaySoundsViewController.swift in Sources */,
@@ -492,7 +583,9 @@
 		};
 		4300DC411E35A58800B34E36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABE439632B73E4D411114E31 /* Pods-PitchPerfect.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PitchPerfect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -504,7 +597,9 @@
 		};
 		4300DC421E35A58800B34E36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFE3CDEB950F39790C4C7A15 /* Pods-PitchPerfect.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PitchPerfect/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

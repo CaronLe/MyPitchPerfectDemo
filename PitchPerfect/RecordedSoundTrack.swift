@@ -13,5 +13,6 @@ class RecordedSoundTrack
     var name: String!
     var type: String!
     var duration: String!
+    var url: URL!
     
 }

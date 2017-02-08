@@ -10,7 +10,7 @@ import AVFoundation
 
 // MARK: - PlaySoundsViewController: AVAudioPlayerDelegate
 
-extension PlaySoundsViewController: AVAudioPlayerDelegate {
+extension PlaySoundsViewController {
     
     // MARK: Alerts
     
@@ -85,6 +85,8 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         
         // schedule to play and start the engine!
         audioPlayerNode.stop()
+        
+        // get the original file to process
         audioPlayerNode.scheduleFile(audioFile, at: nil) {
             
             var delayInSeconds: Double = 0
@@ -168,6 +170,45 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    
+    // Function of saving new file after effect
+    func saveNewFileAfterEffect()
+    {
+        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let recordingName = "afterEffectVoice.wav"
+        let pathArray = [dirPath, recordingName]
+        let filePath = URL(string: pathArray.joined(separator: "/"))
+        
+        do {
+            try  newAudio = AVAudioFile(forWriting: filePath!, settings: ["1": 5])
+        } catch let error as NSError  {
+            print(error)
+        }
+        
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOf: recordedAudioURL)
+        } catch let error as NSError  {
+            print(error)
+        }
+        
+        audioPlayerNode.installTap(onBus: 0, bufferSize: (AVAudioFrameCount(audioPlayer.duration)), format: nil){
+            (buffer: AVAudioPCMBuffer!, time: AVAudioTime!)  in
+            
+            if (self.newAudio.length) < (self.audioFile.length){//Let us know when to stop saving the file, otherwise saving infinitely
+                
+                
+               try! self.newAudio.write(from: buffer)//let's write the buffer result into our file
+                
+            }else{
+                self.audioPlayerNode.removeTap(onBus: 0)//if we dont remove it, will keep on tapping infinitely
+                 }
+            
+        }
+        
+        recordedSoundTrack.url = newAudio.url
+    }
+
     // Function of converting a Time Interval to String
     func stringFromTimeInterval(interval: TimeInterval) -> String {
         let interval = Int(interval)
@@ -176,4 +217,5 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         let hours = (interval / 3600)
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
-}
+    
+   }

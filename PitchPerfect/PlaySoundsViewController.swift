@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class PlaySoundsViewController: UIViewController {
+class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var snailButton: UIButton!
     @IBOutlet weak var chipmunkButton: UIButton!
     @IBOutlet weak var rabbitButton: UIButton!
@@ -24,6 +24,11 @@ class PlaySoundsViewController: UIViewController {
     var audioEngine: AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer: Timer!
+    
+    // Effect
+    var newAudio: AVAudioFile!
+    var audioPlayer: AVAudioPlayer!
+    
  
     let recordedSoundTrack = RecordedSoundTrack()
     // Properties of recorded sound track that will be sent to create new SoundTrack with information View
@@ -43,26 +48,34 @@ class PlaySoundsViewController: UIViewController {
         case .slow:
             playSound(rate:  0.5)
             type = "Slow"
-            
+            //To do: save a new file after change the effect of the original file
+            recordedSoundTrack.url = audioFile.url
+  
         case .fast:
             playSound(rate: 1.5)
             type = "Fast"
-           
+            recordedSoundTrack.url = audioFile.url
+            
         case .chipmunk:
             playSound(pitch: 1000)
             type = "Chipmunk"
+            recordedSoundTrack.url = audioFile.url
             
         case .vader:
             playSound(pitch: -1000)
             type = "Vader"
+            recordedSoundTrack.url = audioFile.url
             
         case .echo:
             playSound(echo: true)
             type = "Echo"
+            recordedSoundTrack.url = audioFile.url
+            
             
         case .reverb:
             playSound(reverb: true)
             type = "Reverb"
+            recordedSoundTrack.url = audioFile.url
             
         }
         configureUI(.playing)
@@ -78,7 +91,7 @@ class PlaySoundsViewController: UIViewController {
         let player = try! AVAudioPlayer(contentsOf: recordedAudioURL)
         recordedSoundTrack.duration = stringFromTimeInterval(interval: player.duration)
         
-        performSegue(withIdentifier: "saveAudioToBeSoundTrack", sender: recordedSoundTrack)
+        performSegue(withIdentifier: "saveAudioToBeSoundTrack", sender: self)
     }
     
     
@@ -86,6 +99,9 @@ class PlaySoundsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAudio()
+        // Pass URL to the instance that will be sent to Add new Sound track View controller later
+       
+        
         
         
     }
@@ -110,8 +126,8 @@ class PlaySoundsViewController: UIViewController {
         if segue.identifier == "saveAudioToBeSoundTrack"
         {
             let addSoundTrackViewController = segue.destination as! AddSoundTrackViewController
-            let recordedSoundTrack = sender as! RecordedSoundTrack
             addSoundTrackViewController.recordedSoundTrack = recordedSoundTrack
+            
         }
     }
     
