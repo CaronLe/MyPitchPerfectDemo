@@ -12,8 +12,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var update: String!
-
         // Do any additional setup after loading the view.
     }
 

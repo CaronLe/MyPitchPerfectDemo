@@ -77,6 +77,27 @@ class SoundTrackTableViewController: UITableViewController, NSFetchedResultsCont
         cell.nameSoundTrack.text = soundTrack.name
         cell.typeofSoundTrack.text = soundTrack.type
         cell.duration.text = soundTrack.duration
+        
+        if let typeImage = soundTrack.type
+        {
+            switch typeImage {
+            case "Slow":
+                cell.typeImageOffline.image = #imageLiteral(resourceName: "Slow")
+            case "Fast":
+                cell.typeImageOffline.image = #imageLiteral(resourceName: "Fast")
+            case "Chipmunk":
+                cell.typeImageOffline.image = #imageLiteral(resourceName: "HighPitch")
+            case "Vader":
+                cell.typeImageOffline.image = #imageLiteral(resourceName: "LowPitch")
+            case "Echo":
+                cell.typeImageOffline.image = #imageLiteral(resourceName: "Echo")
+            case "Reverb":
+                cell.typeImageOffline.image = #imageLiteral(resourceName: "Reverb")
+                
+            default:
+                break
+            }
+        }
 
         return cell
     }

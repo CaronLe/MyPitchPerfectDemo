@@ -23,9 +23,7 @@ class TextInputViewController: UIViewController {
     @IBAction func speakAccordingToTextButton(_ sender: UIButton)
     
     {
-      synth.speak(myUtterance)
-        
-        stopButton.isEnabled = true
+        synth.speak(myUtterance)
         speechButton.isEnabled = false
     }
     @IBAction func okayButton(_ sender: UIButton)

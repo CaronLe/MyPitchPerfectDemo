@@ -21,6 +21,7 @@ class AddSoundTrackViewController: UIViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var recordedSoundTrack: RecordedSoundTrack?
     var player: AVAudioPlayer!
+    var timer: Timer!
   
     
     // MARK: Actions
@@ -46,40 +47,67 @@ class AddSoundTrackViewController: UIViewController {
         return Float(theCurrentTime / theCurrentDuration)
     }
     
+    func startTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateViewsWithTimer(theTimer:)), userInfo: nil, repeats: true)
+    }
+    
+    func updateViewsWithTimer(theTimer: Timer){
+        updateViews()
+    }
+    
     func updateViews(){
         
             progressBar.value = self.getProgress()
         
     }
     
+    // Aleart to user that they have not entered name of the new soundtrack
+    func noticeAboutMissedNameEnter()
+    {
+        let nameFieldMissedAleart = UIAlertController(title: "Missing Name SoundTrack", message: "Please enter your new SoundTrack's name", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        nameFieldMissedAleart.addAction(okAction)
+        self.present(nameFieldMissedAleart, animated: true, completion: nil)
+ 
+    }
+    
     @IBAction func saveSoundTrackInformation(_ sender: UIButton)
     {
-     
-        let entityDescription = NSEntityDescription.entity(forEntityName: "SoundTrack", in: context)
-        let soundTrack = SoundTrack(entity: entityDescription!, insertInto: context)
-       
-        soundTrack.name = nameSoundTrack!.text
-        soundTrack.type = typeSoundTrack!.text
-        soundTrack.duration = duration.text
+   
         
-                do
-                {
-                    try context.save()
-                    print("saved successfully!")
-                    navigationController?.popViewController(animated: true)
-                }
-                catch let error as NSError {
-                    print("Could not save \(error)")
-                    
-                }
+        if (nameSoundTrack.text?.isEmpty)!
+        {
+            noticeAboutMissedNameEnter()
+        }
+        
+        else
+        {
+            let entityDescription = NSEntityDescription.entity(forEntityName: "SoundTrack", in: context)
+            let soundTrack = SoundTrack(entity: entityDescription!, insertInto: context)
+           
+            soundTrack.name = nameSoundTrack!.text
+            soundTrack.type = typeSoundTrack!.text
+            soundTrack.duration = duration.text
+            
+                    do
+                    {
+                        try context.save()
+                        print("saved successfully!")
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    catch let error as NSError {
+                        print("Could not save \(error)")
+                        
+                    }
                 
-
+        }
     }
     
     
     @IBAction func playAudio(_ sender: UIButton)
     {
         player.play()
+        startTimer()
     }
     
     override func viewDidLoad()
@@ -93,7 +121,7 @@ class AddSoundTrackViewController: UIViewController {
         } catch let error as NSError {
             print(error)
         }
-        
+        progressBar.value = 0.0
         
         
 

@@ -5,31 +5,36 @@
         {
             "Name" : "La la la record 2",
             "Type" : "Echo",
-            "Duration" : "20s"
+            "Duration" : "20s",
+            "TypeImage" : "EchoImage"
         },
         "Record2" :
         {
             "Name" : "Hello record",
             "Type" : "Fast",
-            "Duration" : "15s"
+            "Duration" : "15s",
+            "TypeImage" : "FastImage"
         },
         "Record3" :
         {
             "Name" : "My love cover record",
             "Type" : "Reverb",
-            "Duration" : "10s"
+            "Duration" : "10s",
+            "TypeImage" : "ReverbImage"
         },
         "Record4" :
         {
             "Name" : "Acoustic song record",
             "Type" : "Slow",
-            "Duration" : "9s"
+            "Duration" : "9s",
+            "TypeImage" : "SlowImage"
         },
         "Record5" :
         {
             "Name" : "Rock song record",
             "Type" : "Chipmunk",
-            "Duration" : "11s"
+            "Duration" : "11s",
+            "TypeImage" : "ChipmunkImage"
         }
     }
 }

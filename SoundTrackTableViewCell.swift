@@ -10,9 +10,13 @@ import UIKit
 
 class SoundTrackTableViewCell: UITableViewCell {
     // MARK: Properties
+ 
+
     @IBOutlet weak var nameSoundTrack: UILabel!
     @IBOutlet weak var typeofSoundTrack: UILabel!
     @IBOutlet weak var duration: UILabel!
+    @IBOutlet weak var typeImage: UIImageView!
+    @IBOutlet weak var typeImageOffline: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

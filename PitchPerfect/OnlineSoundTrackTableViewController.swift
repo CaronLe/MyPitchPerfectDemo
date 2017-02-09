@@ -27,19 +27,22 @@ class OnlineSoundTrackTableViewController: UITableViewController, NSFetchedResul
         
         for recordIndex in 1...numberOfRecordFromJSON
         {
-        var soundTrackKey = "Record"
-        soundTrackKey += "\(recordIndex)"
-        let nameFromJson = readableJSON["SoundTrack", soundTrackKey, "Name"].string as String!
-        let typeFromJson = readableJSON["SoundTrack", soundTrackKey, "Type"].string as String!
-        let durationFromJson = readableJSON["SoundTrack", soundTrackKey, "Duration"].string as String!
-        
-        
-        let recordedSoundTrack = RecordedSoundTrack()
-        recordedSoundTrack.name = nameFromJson
-        recordedSoundTrack.type = typeFromJson
-        recordedSoundTrack.duration = durationFromJson
-        
-        recordArray.append(recordedSoundTrack)
+            var soundTrackKey = "Record"
+            soundTrackKey += "\(recordIndex)"
+            let nameFromJson = readableJSON["SoundTrack", soundTrackKey, "Name"].string as String!
+            let typeFromJson = readableJSON["SoundTrack", soundTrackKey, "Type"].string as String!
+            let durationFromJson = readableJSON["SoundTrack", soundTrackKey, "Duration"].string as String!
+            let typeImageFromJson = readableJSON["SoundTrack", soundTrackKey, "TypeImage"].string as String!
+
+            
+            
+            let recordedSoundTrack = RecordedSoundTrack()
+            recordedSoundTrack.name = nameFromJson
+            recordedSoundTrack.type = typeFromJson
+            recordedSoundTrack.duration = durationFromJson
+            recordedSoundTrack.typeImage = typeImageFromJson
+            
+            recordArray.append(recordedSoundTrack)
         }
         
     }
@@ -85,6 +88,25 @@ class OnlineSoundTrackTableViewController: UITableViewController, NSFetchedResul
         cell.nameSoundTrack.text = soundTrackForEachCell.name
         cell.typeofSoundTrack.text = soundTrackForEachCell.type
         cell.duration.text = soundTrackForEachCell.duration
+        
+        switch soundTrackForEachCell.typeImage {
+        case "SlowImage":
+            cell.typeImage.image = #imageLiteral(resourceName: "Slow")
+        case "FastImage":
+            cell.typeImage.image = #imageLiteral(resourceName: "Fast")
+        case "ChipmunkImage":
+            cell.typeImage.image = #imageLiteral(resourceName: "HighPitch")
+        case "VaderImage":
+            cell.typeImage.image = #imageLiteral(resourceName: "LowPitch")
+        case "EchoImage":
+            cell.typeImage.image = #imageLiteral(resourceName: "Echo")
+        case "ReverbImage":
+            cell.typeImage.image = #imageLiteral(resourceName: "Reverb")
+   
+        default:
+            break
+        }
+        
         
         return cell
     }
